@@ -1,0 +1,38 @@
+{
+  "name": "web-tracing",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently  \"vite\" \"npm run service\"",
+    "service": "nodemon ./server.js",
+    "build": "vite build",
+    "preview": "concurrently  \"npm run dev\" \"vite preview\""
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "co-body": "^6.1.0",
+    "concurrently": "^8.2.0",
+    "element-plus": "^2.3.7",
+    "error-stack-parser": "^2.1.4",
+    "express": "^4.18.2",
+    "fflate": "^0.8.2",
+    "js-base64": "3.7.3",
+    "nodemon": "^2.0.22",
+    "pako": "2.1.0",
+    "rrweb": "1.1.3",
+    "rrweb-player": "^1.0.0-alpha.3",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "source-map-js": "^1.0.2",
+    "ua-parser-js": "^1.0.38",
+    "vue": "^3.4.21",
+    "vue-router": "^4.2.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vue-tsc": "^1.2.0"
+  }
+}
