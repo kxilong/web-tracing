@@ -108,6 +108,13 @@ app.post("/reportData", async (req, res) => {
   }
 });
 
+app.get("/reportData", async (req, res) => {
+  res.send({
+    code: 200,
+    meaage: "上报成功！",
+  });
+});
+
 app.listen(3350, () => {
   console.log("Server is running at http://localhost:8083");
 });

@@ -2,6 +2,10 @@ export function on(target, eventName, handler, options = false) {
   target.addEventListener(eventName, handler, options);
 }
 
+export function remove(target, eventName, handler, options = false) {
+  target.removeEventListener(eventName, handler, options);
+}
+
 /**
  * 函数节流
  * fn 需要节流的函数
@@ -76,4 +80,11 @@ export function generateUUID() {
     }
   );
   return uuid;
+}
+
+export function isObjectOverSizeLimit(object, limitInKB) {
+  const serializedObject = JSON.stringify(object);
+  const sizeInBytes = new TextEncoder().encode(serializedObject).length;
+  const sizeInKB = sizeInBytes / 1024;
+  return sizeInKB > limitInKB;
 }

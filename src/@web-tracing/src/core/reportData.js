@@ -1,4 +1,4 @@
-import { _support, getLocationHref } from "../utils";
+import { _support, getLocationHref, isObjectOverSizeLimit } from "../utils";
 import { EVENTTYPES } from "../common";
 import { breadcrumb } from "./index";
 
@@ -86,8 +86,9 @@ export class TransportData {
 
       const value = this.beacon(dsn, result);
       if (!value) {
+        const isLimit = isObjectOverSizeLimit(result, 2);
         // img 限制在 2kb
-        return this.useImgUpload
+        return this.useImgUpload && isLimit
           ? this.imgRequest(result, dsn)
           : this.xhrPost(result, dsn);
       }

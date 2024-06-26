@@ -138,6 +138,16 @@ const HandleEvents = {
       transportData.send(data);
     }
   },
+  handleOfflinechange(data) {
+    console.log(data);
+    breadcrumb.push({
+      type: EVENTTYPES.OFFLINE,
+      category: breadcrumb.getCategory(EVENTTYPES.OFFLINE),
+      data,
+      time: getTimestamp(),
+      status: STATUS_CODE.ERROR,
+    });
+  },
 };
 
 export { HandleEvents };

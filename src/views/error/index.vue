@@ -180,6 +180,8 @@ export default {
           item.content = `加载资源报错：${item.message}`;
         } else if (item.category == "Route") {
           item.content = `路由变化：从 ${item.data.from}页面 切换到 ${item.data.to}页面`;
+        } else if (item.category == "Offline") {
+          item.content = `网络断开连接`;
         }
       });
       this.activities = breadcrumb;

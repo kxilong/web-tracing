@@ -14,6 +14,7 @@ export const EVENTTYPES = {
   PERFORMANCE: "performance",
   RECORDSCREEN: "recordScreen",
   WHITESCREEN: "whiteScreen",
+  OFFLINE: "offline",
 };
 
 /**
@@ -34,6 +35,7 @@ export const BREADCRUMBTYPES = {
   CODEERROR: "Code_Error",
   ROUTE: "Route",
   CUSTOM: "Custom",
+  OFFLINE: "Offline",
 };
 
 export const HTTPTYPE = {

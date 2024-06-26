@@ -6,6 +6,7 @@ import {
   breadcrumb,
   options,
   notify,
+  removeListener,
 } from "./src/core/index.js";
 import { nativeTryCatch } from "./src/utils";
 
@@ -16,16 +17,12 @@ function init(options) {
 
 function install(Vue, options) {
   try {
-    const handler = Vue.config.errorHandler;
-    Vue.config.errorHandler = function (err, vm, info) {
-      HandleEvents.handleError(err);
-      if (handler) handler.apply(null, [err, vm, info]);
-    };
     init(options);
-  } catch (error) {
-    console.warn("插件错误");
+  } catch (err) {
+    console.log(err);
+    removeListener();
+    HandleEvents.handleError(err);
   }
-  init(options);
 }
 
 function use(plugin, option) {

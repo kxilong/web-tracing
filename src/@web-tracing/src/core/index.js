@@ -8,3 +8,4 @@ export * from "./reportData";
 export * from "./options";
 export * from "./queue";
 export * from "./transformData";
+export * from "./remove";

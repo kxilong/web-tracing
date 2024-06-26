@@ -3,6 +3,13 @@ import { EVENTTYPES, STATUS_CODE } from "../common/constant";
 import { htmlElementAsString, getTimestamp } from "../utils";
 
 export function setupReplace() {
+  // 监听s网络是否关闭
+  addReplaceHandler({
+    callback: (e) => {
+      HandleEvents.handleOfflinechange(e);
+    },
+    type: EVENTTYPES.OFFLINE,
+  });
   // 监听hashchange
   addReplaceHandler({
     callback: (e) => {

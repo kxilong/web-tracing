@@ -13,6 +13,9 @@ import {
 
 function replace(type) {
   switch (type) {
+    case EVENTTYPES.OFFLINE:
+      listenOfflinechange();
+      break;
     case EVENTTYPES.HASHCHANGE:
       listenHashchange();
       break;
@@ -210,4 +213,15 @@ function listenHashchange() {
       notify(EVENTTYPES.HASHCHANGE, e);
     });
   }
+}
+
+function listenOfflinechange() {
+  on(
+    _global,
+    "offline",
+    function (e) {
+      notify(EVENTTYPES.OFFLINE, e);
+    },
+    true
+  );
 }

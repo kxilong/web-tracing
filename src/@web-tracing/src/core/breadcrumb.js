@@ -51,6 +51,10 @@ export class Breadcrumb {
       case EVENTTYPES.ERROR:
         return BREADCRUMBTYPES.CODEERROR;
 
+      // 断网
+      case EVENTTYPES.OFFLINE:
+        return BREADCRUMBTYPES.OFFLINE;
+
       // 用户自定义
       default:
         return BREADCRUMBTYPES.CUSTOM;
